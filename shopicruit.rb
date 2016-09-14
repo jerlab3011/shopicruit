@@ -48,7 +48,7 @@ end until current_page_products.empty?
 types = ["Clock", "Watch"] #Change this to change the types you're looking for
 products = products.select { |p| types.include?(p.product_type) }
 products.each { |product| total += product.cost_of_all_variants }
-puts '$'+total.to_s('F')
+puts '$'+ "%.2f" % total
 
 class ProductTest < Test::Unit::TestCase
   def setup
